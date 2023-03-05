@@ -5,9 +5,32 @@ public class Main {
     public static void main(String[] args) {
 
         List<Integer> nums = new ArrayList<>(List.of(1, 1, 2, 3, 4, 4, 5, 5, 6, 7));
+        List<String> words = new ArrayList<>(List.of("aa", "aa", "bad", "lost", "hope", "hope", "lucky"));
 
         task1(nums);
         task2(nums);
+        task3(words);
+
+    }
+
+    private static void task3(List<String> words) {
+
+        System.out.println("Задача 3");
+
+        if (words.size() == 0) {
+            System.out.print("Список пустой!");
+        } else {
+
+            Set<String> wordsSet = new LinkedHashSet<>(words);
+            List<String> wordsWithoutDuplicate = new ArrayList<>(wordsSet);
+
+            for (String s : wordsWithoutDuplicate) {
+                System.out.print(s + " ");
+            }
+
+        }
+
+        System.out.println();
 
     }
 

@@ -10,6 +10,41 @@ public class Main {
         task1(nums);
         task2(nums);
         task3(words);
+        task4(words);
+
+    }
+
+    private static void task4(List<String> words) {
+
+        System.out.println("Задача 4");
+
+        if (words.size() == 0) {
+            System.out.print("Список пустой!");
+        } else {
+
+            Map<String, Integer> countWordsInSet = new HashMap<>();
+
+            for (String word : words) {
+
+                if (countWordsInSet.get(word) == null) {
+                    countWordsInSet.put(word, 1);
+                } else {
+                    countWordsInSet.put(word, countWordsInSet.get(word) + 1);
+                }
+
+            }
+
+            for (Map.Entry<String, Integer> entry : countWordsInSet.entrySet()) {
+
+                if (entry.getValue() > 1) {
+                    System.out.println(entry);
+                }
+
+            }
+
+        }
+
+        System.out.println();
 
     }
 
